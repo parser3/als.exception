@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="${response:charset}"/>
+		<title>Unhandled Exception</title>
+		<style>
+			@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
+			@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+			*, *:before, *:after {
+				box-sizing: border-box;
+			}
+
+			:focus, :active {
+				outline: none;
+			}
+			::-moz-focus-inner {
+				border: 0;
+			}
+
+			html {
+				width: 100%;
+				height: 100%;
+				font-size: 100%;
+				line-height: 1.4;
+				-ms-text-size-adjust: 100%;
+				-webkit-text-size-adjust: 100%;
+				-webkit-font-smoothing: antialiased;
+				-ms-touch-action: manipulation;
+				touch-action: manipulation;
+				text-rendering: optimizeLegibility;
+			}
+
+			body {
+				margin: 0;
+				position: relative;
+				width: 100%;
+				min-height: 100%;
+				font-family: 'Roboto Mono', monospace;
+				font-size: 100%;
+				font-weight: 300;
+				line-height: 1.4;
+				color: #212121;
+				background-color: #f5f5f5;
+			}
+
+			table, th, td {
+				border-collapse: collapse;
+				border-spacing: 0;
+				border: none;
+				vertical-align: top;
+			}
+
+			table {
+				position: relative;
+				margin-bottom: 1.2em;
+				empty-cells: show;
+			}
+			table th,
+			table td {
+				padding: 0.5em 1.2em 0.5em 0.3em;
+				empty-cells: show;
+			}
+			table th {
+				border-bottom: 1px solid #ddd;
+				font-weight: bold;
+			}
+
+			h1:first-child, h2:first-child {
+				margin-top: 0;
+			}
+
+			h1 + h2 {
+				margin-top: 0;
+			}
+
+			p {
+				margin-top: 0;
+				margin-bottom: 1em;
+			}
+
+			.page {
+				position: relative;
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-orient: vertical;
+				-webkit-box-direction: normal;
+				-webkit-flex-direction: column;
+				-ms-flex-direction: column;
+				flex-direction: column;
+				min-height: 100vh;
+			}
+			.page__header {
+				position: relative;
+				-webkit-box-flex: 0;
+				-webkit-flex: 0 0 auto;
+				-ms-flex: 0 0 auto;
+				flex: 0 0 auto;
+			}
+			.page__content {
+				position: relative;
+				-webkit-box-flex: 1;
+				-webkit-flex: 1 1 auto;
+				-ms-flex: 1 1 auto;
+				flex: 1 1 auto;
+			}
+			.page__footer {
+				position: relative;
+				-webkit-box-flex: 0;
+				-webkit-flex: 0 0 auto;
+				-ms-flex: 0 0 auto;
+				flex: 0 0 auto;
+			}
+
+			.container {
+				position: relative;
+				margin: 0 auto;
+				padding: 0px 20px;
+				max-width: 1280px;
+			}
+
+			.header {
+				position: relative;
+			}
+			.content {
+				position: relative;
+			}
+			.footer {
+				position: relative;
+				margin: 0 auto;
+				padding: 0px 40px;
+				max-width: 1280px;
+			}
+
+			.request {
+				padding: 10px 20px;
+				position: relative;
+				font-size: 12px;
+				line-height: 1.4;
+				color: #212121;
+				border-bottom: 1px solid #90a4ae;
+			}
+			.request div {
+				margin-right: 15px;
+				display: inline-block;
+				vertical-align: middle;
+			}
+			.request div:last-child {
+				margin-right: 0px;
+			}
+			.request span {
+				color: #9e9e9e;
+			}
+			.request .time {
+				position: relative;
+				color: #2196f3;
+			}
+			.request .remote {
+				position: relative;
+				color: #4caf50;
+			}
+			.request .parser {
+				position: relative;
+			}
+			.request .params {
+				position: relative;
+			}
+			.request .cookie {
+				position: relative;
+			}
+
+			.exception {
+				margin: 20px 0;
+				padding: 20px 150px 20px 20px;
+				position: relative;
+				color: #616161;
+				background-color: #fff;
+				box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2), 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12);
+			}
+			.exception__icon {
+				position: absolute;
+				top: 29px;
+				right: 20px;
+				font-size: 100px;
+				color: #ff8a80;
+			}
+			.exception__info {
+				margin: 15px 0 0 0;
+				position: relative;
+			}
+			.exception__title {
+				margin: 0px;
+				position: relative;
+				font-size: 50px;
+				font-weight: 100;
+				color: #f44336;
+			}
+			.exception__type {
+				margin: 0px;
+				position: relative;
+				font-size: 30px;
+				font-weight: 100;
+			}
+			.exception__type .arrow {
+				padding: 0 10px 0 0;
+				color: #f44336;
+				text-transform: uppercase;
+			}
+			.exception__comment {
+				margin: 5px 0 15px 0;
+				position: relative;
+			}
+			.exception__type + .exception__comment {
+				margin: 15px 0;
+			}
+			.exception__file {
+				margin: 10px -150px -20px -20px;
+				padding: 10px 20px;
+				position: relative;
+				font-size: 12px;
+				color: #9E9E9E;
+				border-top: 1px solid #e0e0e0;
+				background-color: #f5f5f5;
+			}
+			.exception__file span {
+				color: #607D8B;
+			}
+			.exception__file span.path {
+				opacity: .75;
+			}
+			.exception__file span.name {
+				color: #455A64;
+			}
+
+			.stack {
+				margin: 20px 0 40px 0;
+				padding: 0;
+				position: relative;
+			}
+			.stack__title {
+				padding: 10px 0 10px 44px;
+				position: relative;
+				font-size: 24px;
+				text-transform: uppercase;
+				color: #607d8b;
+			}
+			.stack__icon {
+				position: absolute;
+				top: 10px;
+				left: 0px;
+				font-size: 34px;
+				color: #ff8a80;
+			}
+			.stack__content {
+				margin: 0;
+				position: relative;
+			}
+			.stack__trace {
+				margin: 0px;
+				width: 100%;
+				font-size: 12px;
+				border-collapse: collapse;
+				border-bottom: 2px solid #90a4ae;
+			}
+			.stack__trace tr:first-child th {
+				border-top: 0;
+			}
+			.stack__trace tr:last-child td {
+				border-bottom: 0;
+			}
+			.stack__trace tr th:first-child,
+			.stack__trace tr td:first-child {
+				border-left: 0;
+			}
+			.stack__trace tr th:last-child,
+			.stack__trace tr td:last-child {
+				border-right: 0;
+			}
+			.stack__trace tr th,
+			.stack__trace tr td {
+				padding: 6px 8px;
+				vertical-align: top;
+				text-align: left;
+				font-weight: 300;
+				border: 1px solid #fff;
+			}
+			.stack__trace thead th {
+				color: #fff;
+				background: #607d8b;
+				text-transform: uppercase;
+			}
+			.stack__trace tbody td {
+				background-color: #fff;
+			}
+			.stack__trace tbody tr:nth-child(2n) td,
+			.stack__trace tbody tr:nth-child(2n) th {
+				background-color: #e0e0e0;
+			}
+			.stack__trace th.stack__trace_n,
+			.stack__trace th.stack__trace_line,
+			.stack__trace th.stack__trace_column {
+				text-align: center;
+			}
+			.stack__trace td.stack__trace_n,
+			.stack__trace td.stack__trace_line,
+			.stack__trace td.stack__trace_column {
+				text-align: right;
+			}
+			.stack__trace td.stack__trace_name {
+				color: #3f51b5;
+			}
+			.stack__trace td.stack__trace_path,
+			.stack__trace td.stack__trace_line,
+			.stack__trace td.stack__trace_column {
+				color: #9E9E9E;
+			}
+
+			.status {
+				padding: 10px 20px;
+				position: relative;
+				font-size: 12px;
+				line-height: 1.4;
+				color: #212121;
+				border-top: 1px solid #90a4ae;
+			}
+			.status div {
+				margin-right: 15px;
+				display: inline-block;
+				vertical-align: middle;
+			}
+			.status div:last-child {
+				margin-right: 0px;
+			}
+			.status span {
+				color: #9e9e9e;
+			}
+		</style>
+	</head>
+	<body class="body">
+		<div class="page">
+			<div class="page__header">
+				<div class="container header">
+					<div class="request">
+						<div class="time" title="Текущее время">${self.request.time}</div>
+						<div class="remote" title="REMOTE_HOST / REMOTE_ADDR">[${self.request.remote}]</div>
+						<div class="parser" title="Версия Parser"><span>Parser:</span> ${self.request.parser}</div>
+						<div class="params"><span>get/post/query:</span> ${self.request.getCount}/${self.request.postCount}/${self.request.queryCount}</div>
+						<div class="cookie"><span>cookie:</span> ${self.request.cookiesCount}</div>
+					</div>
+				</div>
+			</div>
+			<div class="page__content">
+				<div class="container content">
+					<div class="exception">
+						<i class="exception__icon material-icons">warning</i>
+						<h1 class="exception__title" title="Источник ошибки (ошибочное имя файла, метода, …)">${self.exception.source}</h1>
+						^if(def $self.exception.type){
+							<h2 class="exception__type" title="Тип ошибки"><span class="arrow">&#8627^;</span>${self.exception.type}</h2>
+						}
+						<div class="exception__comment" title="Комментарий">${self.exception.comment}</div>
+						^if(def $self.exception.file){
+							<div class="exception__file">at <span class="path" title="${self.exception.file}">${self.exception.file_path}/</span><span class="name">${self.exception.file_name}</span> line <span title="line:column">${self.exception.lineno}:${self.exception.colno}</span></div>
+						}
+					</div>
+
+					^if($self.stack){
+						<div class="stack">
+							<div class="stack__title"><i class="stack__icon material-icons">filter_list</i><span>Stack Trace</span></div>
+							<div class="stack__content">
+								<table class="stack__trace">
+									<thead>
+										<tr>
+											<th class="stack__trace_n">#</th>
+											<th class="stack__trace_name">Called code</th>
+											<th class="stack__trace_path">Path</th>
+											<th class="stack__trace_file">File</th>
+											<th class="stack__trace_line">Line</th>
+											<th class="stack__trace_column">Column</th>
+										</tr>
+									</thead>
+									<tbody>
+										^self.stack.menu{
+											<tr>
+												<td class="stack__trace_n">${self.stack.ln}</td>
+												<td class="stack__trace_name">${self.stack.name}</td>
+												<td class="stack__trace_path" title="${self.stack.file}">${self.stack.file_path}</td>
+												<td class="stack__trace_file" title="${self.stack.file}">${self.stack.file_name}</td>
+												<td class="stack__trace_line">${self.stack.lineno}</td>
+												<td class="stack__trace_column">${self.stack.colno}</td>
+											</tr>
+										}
+									</tbody>
+								</table>
+							</div>
+						</div>
+					}
+				</div>
+			</div>
+			<div class="page__footer">
+				<div class="container footer">
+					<div class="status">
+						<div class="status__pid" title="Идентификатор процесса (process) операционной системы, в котором работает Parser."><span>PID:</span> ${status:pid}</div>
+						<div class="status__tid" title="Идентификатор потока (thread) операционной системы, в котором работает Parser."><span>TID:</span> ${status:tid}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Unhandled Exception</title>
+		<style>
+			@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
+			@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+			*, *:before, *:after {
+				box-sizing: border-box;
+			}
+
+			:focus, :active {
+				outline: none;
+			}
+			::-moz-focus-inner {
+				border: 0;
+			}
+
+			html {
+				width: 100%;
+				height: 100%;
+				font-size: 100%;
+				line-height: 1.4;
+				-ms-text-size-adjust: 100%;
+				-webkit-text-size-adjust: 100%;
+				-webkit-font-smoothing: antialiased;
+				-ms-touch-action: manipulation;
+				touch-action: manipulation;
+				text-rendering: optimizeLegibility;
+			}
+
+			body {
+				margin: 0;
+				position: relative;
+				width: 100%;
+				min-height: 100%;
+				font-family: 'Roboto Mono', monospace;
+				font-size: 100%;
+				font-weight: 300;
+				line-height: 1.4;
+				color: #212121;
+				background-color: #f5f5f5;
+			}
+
+			p {
+				margin-top: 0;
+				margin-bottom: 1em;
+			}
+
+			.page {
+				position: relative;
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-orient: vertical;
+				-webkit-box-direction: normal;
+				-webkit-flex-direction: column;
+				-ms-flex-direction: column;
+				flex-direction: column;
+				min-height: 100vh;
+			}
+			.page__content {
+				position: relative;
+				-webkit-box-flex: 1;
+				-webkit-flex: 1 1 auto;
+				-ms-flex: 1 1 auto;
+				flex: 1 1 auto;
+			}
+
+			.container {
+				position: relative;
+				margin: 0 auto;
+				padding: 0px 20px;
+				max-width: 1280px;
+			}
+
+			.content {
+				position: relative;
+			}
+
+			.exception {
+				margin: 20px 0;
+				padding: 20px 150px 20px 20px;
+				position: relative;
+				color: #616161;
+				background-color: #fff;
+				box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2), 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12);
+			}
+			.exception__icon {
+				position: absolute;
+				top: 29px;
+				right: 20px;
+				font-size: 100px;
+				color: #ff8a80;
+			}
+			.exception__info {
+				margin: 15px 0 0 0;
+				position: relative;
+			}
+			.exception__title {
+				margin: 0px;
+				position: relative;
+				font-size: 50px;
+				font-weight: 100;
+				color: #f44336;
+			}
+		</style>
+	</head>
+	<body class="body">
+		<div class="page">
+			<div class="page__content">
+				<div class="container content">
+					<div class="exception">
+						<i class="exception__icon material-icons">warning</i>
+						<h1 class="exception__title">Unhandled Exception</h1>
+						<div class="exception__info">
+							<p>The server encountered an unhandled exception and was unable to complete your request.</p>
+							<p>Please contact the server administrator, $env:SERVER_ADMIN and inform them of the time the error occurred, and anything you might have done that may have caused the error.</p>
+							<p>More information about this error may be available in the Parser error log or in debug version of unhandled_exception.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

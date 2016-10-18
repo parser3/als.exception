@@ -1,0 +1,11 @@
+# This is the official list of als/exception authors for copyright purposes.
+# This file is distinct from the CONTRIBUTORS files.
+#
+# Names should be added to this file as:
+#     Name or Organization <email address> <email address>
+# The email address is not required to avoid spam.
+#
+# Please keep the list sorted alphabetically.
+
+
+Art. Lebedev Studio, Ltd
