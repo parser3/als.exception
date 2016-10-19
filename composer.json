@@ -1,0 +1,6 @@
+{
+  "name": "als/exception",
+  "description": "Parser3 Exceptions Renderer.",
+  "keywords": ["Parser3", "Exception"],
+  "type": "library"
+}
