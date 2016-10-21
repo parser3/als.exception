@@ -1,6 +1,19 @@
 {
   "name": "als/exception",
+  "type": "library",
   "description": "Parser3 Exceptions Renderer.",
-  "keywords": ["Parser3", "Exception"],
-  "type": "library"
+  "keywords": ["parser3", "exception"],
+  "homepage": "https://github.com/parser3/exception",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Leonid Knyazev",
+      "email": "leonid@knyazev.me",
+      "homepage": "https://knyazev.me",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "files": ["als/exception/src"]
+  }
 }
