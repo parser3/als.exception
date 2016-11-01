@@ -14,6 +14,8 @@
     }
   ],
   "autoload": {
-    "files": ["als/exception/src"]
+    "parser": {
+      "als/exception": "als/exception/src"
+    }
   }
 }
