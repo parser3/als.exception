@@ -1,21 +1,40 @@
 {
-  "name": "als/exception",
-  "type": "library",
-  "description": "Parser3 Exceptions Renderer.",
-  "keywords": ["parser3", "exception"],
-  "homepage": "https://github.com/parser3/exception",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Leonid Knyazev",
-      "email": "leonid@knyazev.me",
-      "homepage": "https://knyazev.me",
-      "role": "Developer"
-    }
-  ],
-  "autoload": {
-    "parser": {
-      "als/exception": "src"
-    }
-  }
+    "name": "als/exception",
+    "type": "library",
+    "description": "Parser3 Exceptions Renderer.",
+    "keywords": ["parser3", "exception"],
+    "homepage": "https://github.com/parser3/als.exception",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Leonid Knyazev",
+            "email": "leonid@knyazev.me",
+            "homepage": "https://knyazev.me",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/parser3/als.exception/issues"
+    },
+    "require-dev": {
+        "parser/composer": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Als\\Exception\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Als\\Exception\\Test\\": "test/"
+        }
+    },
+    "extra": {
+        "platform": {
+            "parser": "3.4.4"
+        }
+    },
+    "repositories": [
+        { "type": "composer", "url": "https://packages.knyazev.me" }
+    ]
 }

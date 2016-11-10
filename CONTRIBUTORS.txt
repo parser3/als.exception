@@ -10,4 +10,4 @@
 # Please keep the list sorted.
 
 
-Leonid Knyazev <n3o@design.ru> <leonid@knyazev.me>
+Leonid Knyazev <leonid@knyazev.me> <n3o@design.ru>

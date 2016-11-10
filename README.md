@@ -1,11 +1,4 @@
-<!-- Badges URLs for 'master' and 'develop' branches -->
-[master-badge]:    /../badges/master/build.svg   "Master build status"
-[master-commits]:  /../commits/master            "Master last commits"
-[develop-badge]:   /../badges/develop/build.svg  "Develop build status"
-[develop-commits]: /../commits/develop           "Develop last commits"
-
-
-# Exception | [![master-badge][]][master-commits] | [![develop-badge][]][develop-commits]
+# Als/Exception
 
 Шаблонизатор "исключений" Парсера.
 
@@ -33,7 +26,7 @@ Coming soon...
 
 ## References
 
-- Questions to [Leonid Knyazev](@n3o) | <leonid@knyazev.me> | <n3o@design.ru>
-- Bug reports and Feature requests to [Issues](https://gitlab.design.ru/als/exception/issues)
+- Questions to Leonid Knyazev <leonid@knyazev.me> <n3o@design.ru>
+- Bug reports and Feature requests to Issues.
 
 ---

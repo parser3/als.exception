@@ -2,7 +2,7 @@
 # $ID: Exception.p, 22 Sep 2016 15:32, Leonid 'n3o' Knyazev $
 ###############################################################################
 @CLASS
-als/exception/Exception
+Als/Exception
 
 
 @OPTIONS
@@ -100,7 +100,13 @@ $result[^self._render[$params]]
 
 ###############################################################################
 @normalizePath[path]
-$result[^path.replace[^env:DOCUMENT_ROOT.trim[right;/]/;/]]
+^if(def $env:PWD){
+	$result[^path.replace[^env:PWD.trim[right;/]/;/]]
+}(def $env:DOCUMENT_ROOT_VIRTUAL){
+	$result[^path.replace[^env:DOCUMENT_ROOT_VIRTUAL.trim[right;/]/;/]]
+}(def $env:DOCUMENT_ROOT){
+	$result[^path.replace[^env:DOCUMENT_ROOT.trim[right;/]/;/]]
+}
 #end @normalizePath[]
 
 
