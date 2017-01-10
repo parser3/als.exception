@@ -15,6 +15,15 @@ locals
 # @{object} [now]
 $self.now[^date::now[]]
 
+# @{string} [root]
+^if(def $env:PWD){
+	$self.root[^env:PWD.trim[right;/]]
+}(def $env:DOCUMENT_ROOT_VIRTUAL){
+	$self.root[^env:DOCUMENT_ROOT_VIRTUAL.trim[right;/]]
+}(def $env:DOCUMENT_ROOT){
+	$self.root[^env:DOCUMENT_ROOT.trim[right;/]]
+}
+
 # @{bool} [debug]
 $self.debug(false)
 
@@ -31,6 +40,7 @@ $self.exception[^hash::create[]]
 $self._system[^hash::create[
 	$.fields[
 		$.now(true)
+		$.root(true)
 		$.debug(true)
 		$.status(true)
 		$.stack(true)
@@ -60,9 +70,12 @@ $self.debug(^params.debug.bool(false))
 
 	^if(!def $self.exception.source){
 		$self.exception.source[Unhandled Exception]
+	}{
+		$self.exception.source[^self.normalizePath[$self.exception.source]]
 	}
 
 	^if(def $self.exception.comment){
+		$self.exception.comment[^self.normalizePath[$self.exception.comment]]
 		$self.exception.comment[^untaint[html]{$self.exception.comment}]
 	}
 
@@ -100,12 +113,10 @@ $result[^self._render[$params]]
 
 ###############################################################################
 @normalizePath[path]
-^if(def $env:PWD){
-	$result[^path.replace[^env:PWD.trim[right;/]/;/]]
-}(def $env:DOCUMENT_ROOT_VIRTUAL){
-	$result[^path.replace[^env:DOCUMENT_ROOT_VIRTUAL.trim[right;/]/;/]]
-}(def $env:DOCUMENT_ROOT){
-	$result[^path.replace[^env:DOCUMENT_ROOT.trim[right;/]/;/]]
+$result[$path]
+
+^if(def $result){
+	$result[^result.replace[${self.root}/;/]]
 }
 #end @normalizePath[]
 
