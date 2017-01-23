@@ -14,6 +14,7 @@
 			:focus, :active {
 				outline: none;
 			}
+
 			::-moz-focus-inner {
 				border: 0;
 			}
@@ -56,13 +57,15 @@
 				margin-bottom: 1.2em;
 				empty-cells: show;
 			}
+
 			table th,
 			table td {
 				padding: 0.5em 1.2em 0.5em 0.3em;
 				empty-cells: show;
 			}
+
 			table th {
-				border-bottom: 1px solid #ddd;
+				border-bottom: 1px solid #dddddd;
 				font-weight: bold;
 			}
 
@@ -92,6 +95,7 @@
 				flex-direction: column;
 				min-height: 100vh;
 			}
+
 			.page__header {
 				position: relative;
 				-webkit-box-flex: 0;
@@ -99,6 +103,7 @@
 				-ms-flex: 0 0 auto;
 				flex: 0 0 auto;
 			}
+
 			.page__content {
 				position: relative;
 				-webkit-box-flex: 1;
@@ -106,6 +111,7 @@
 				-ms-flex: 1 1 auto;
 				flex: 1 1 auto;
 			}
+
 			.page__footer {
 				position: relative;
 				-webkit-box-flex: 0;
@@ -124,9 +130,11 @@
 			.header {
 				position: relative;
 			}
+
 			.content {
 				position: relative;
 			}
+
 			.footer {
 				position: relative;
 				margin: 0 auto;
@@ -142,31 +150,39 @@
 				color: #212121;
 				border-bottom: 1px solid #90a4ae;
 			}
+
 			.request div {
 				margin-right: 15px;
 				display: inline-block;
 				vertical-align: middle;
 			}
+
 			.request div:last-child {
 				margin-right: 0px;
 			}
+
 			.request span {
 				color: #9e9e9e;
 			}
+
 			.request .time {
 				position: relative;
 				color: #2196f3;
 			}
+
 			.request .remote {
 				position: relative;
 				color: #4caf50;
 			}
+
 			.request .parser {
 				position: relative;
 			}
+
 			.request .params {
 				position: relative;
 			}
+
 			.request .cookie {
 				position: relative;
 			}
@@ -177,8 +193,9 @@
 				position: relative;
 				color: #616161;
 				background-color: #fff;
-				box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2), 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12);
+				box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
 			}
+
 			.exception__icon {
 				position: absolute;
 				top: 29px;
@@ -186,10 +203,12 @@
 				font-size: 100px;
 				color: #ff8a80;
 			}
+
 			.exception__info {
 				margin: 15px 0 0 0;
 				position: relative;
 			}
+
 			.exception__title {
 				margin: 0px;
 				position: relative;
@@ -197,24 +216,29 @@
 				font-weight: 100;
 				color: #f44336;
 			}
+
 			.exception__type {
 				margin: 0px;
 				position: relative;
 				font-size: 30px;
 				font-weight: 100;
 			}
+
 			.exception__type .arrow {
 				padding: 0 10px 0 0;
 				color: #f44336;
 				text-transform: uppercase;
 			}
+
 			.exception__comment {
 				margin: 5px 0 15px 0;
 				position: relative;
 			}
+
 			.exception__type + .exception__comment {
 				margin: 15px 0;
 			}
+
 			.exception__file {
 				margin: 10px -150px -20px -20px;
 				padding: 10px 20px;
@@ -224,12 +248,15 @@
 				border-top: 1px solid #e0e0e0;
 				background-color: #f5f5f5;
 			}
+
 			.exception__file span {
 				color: #607D8B;
 			}
+
 			.exception__file span.path {
 				opacity: .75;
 			}
+
 			.exception__file span.name {
 				color: #455A64;
 			}
@@ -239,6 +266,7 @@
 				padding: 0;
 				position: relative;
 			}
+
 			.stack__title {
 				padding: 10px 0 10px 44px;
 				position: relative;
@@ -246,6 +274,7 @@
 				text-transform: uppercase;
 				color: #607d8b;
 			}
+
 			.stack__icon {
 				position: absolute;
 				top: 10px;
@@ -253,10 +282,12 @@
 				font-size: 34px;
 				color: #ff8a80;
 			}
+
 			.stack__content {
 				margin: 0;
 				position: relative;
 			}
+
 			.stack__trace {
 				margin: 0px;
 				width: 100%;
@@ -264,20 +295,25 @@
 				border-collapse: collapse;
 				border-bottom: 2px solid #90a4ae;
 			}
+
 			.stack__trace tr:first-child th {
 				border-top: 0;
 			}
+
 			.stack__trace tr:last-child td {
 				border-bottom: 0;
 			}
+
 			.stack__trace tr th:first-child,
 			.stack__trace tr td:first-child {
 				border-left: 0;
 			}
+
 			.stack__trace tr th:last-child,
 			.stack__trace tr td:last-child {
 				border-right: 0;
 			}
+
 			.stack__trace tr th,
 			.stack__trace tr td {
 				padding: 6px 8px;
@@ -286,35 +322,85 @@
 				font-weight: 300;
 				border: 1px solid #fff;
 			}
+
 			.stack__trace thead th {
 				color: #fff;
 				background: #607d8b;
 				text-transform: uppercase;
 			}
+
 			.stack__trace tbody td {
 				background-color: #fff;
 			}
-			.stack__trace tbody tr:nth-child(2n) td,
-			.stack__trace tbody tr:nth-child(2n) th {
+
+			.stack__trace tbody tr.stack__line_odd td,
+			.stack__trace tbody tr.stack__line_odd th {
+				background-color: #F5F5F5;
+			}
+
+			.stack__trace tbody tr.stack__line_even td,
+			.stack__trace tbody tr.stack__line_even th {
 				background-color: #e0e0e0;
 			}
+
 			.stack__trace th.stack__trace_n,
 			.stack__trace th.stack__trace_line,
 			.stack__trace th.stack__trace_column {
 				text-align: center;
 			}
+
 			.stack__trace td.stack__trace_n,
 			.stack__trace td.stack__trace_line,
 			.stack__trace td.stack__trace_column {
 				text-align: right;
 			}
-			.stack__trace td.stack__trace_name {
-				color: #3f51b5;
+
+			.stack__trace td.stack__trace_n {
+				width: 32px;
 			}
-			.stack__trace td.stack__trace_path,
-			.stack__trace td.stack__trace_line,
-			.stack__trace td.stack__trace_column {
-				color: #9E9E9E;
+
+			.stack__trace tr td.stack__trace_name span {
+				color: rgba(63, 81, 181, 1);
+				border-bottom: 1px dotted rgba(63, 81, 181, .5);
+			}
+			.stack__trace tr:hover td.stack__trace_name span,
+			.stack__trace tr.opened td.stack__trace_name span,
+			.stack__trace tr.opened:hover td.stack__trace_name span {
+				color: rgba(244, 67, 54, 1);
+				border-bottom: 1px dotted rgba(244, 67, 54, .6);
+			}
+
+			.stack__trace tr td.stack__trace_path,
+			.stack__trace tr td.stack__trace_line,
+			.stack__trace tr td.stack__trace_column {
+				color: rgba(158, 158, 158, 1);
+			}
+			.stack__trace tr:hover td.stack__trace_path,
+			.stack__trace tr.opened td.stack__trace_path,
+			.stack__trace tr.opened:hover td.stack__trace_path,
+			.stack__trace tr:hover td.stack__trace_line,
+			.stack__trace tr.opened td.stack__trace_line,
+			.stack__trace tr.opened:hover td.stack__trace_line,
+			.stack__trace tr:hover td.stack__trace_column,
+			.stack__trace tr.opened td.stack__trace_column,
+			.stack__trace tr.opened:hover td.stack__trace_column {
+				color: rgba(66, 66, 66, 1);
+			}
+
+			.stack__trace td.stack__trace_code {
+				padding: 0;
+			}
+
+			.stack__line_info:hover {
+				cursor: pointer;
+			}
+
+			.stack__line_code {
+				display: none;
+			}
+
+			.stack__line_code.opened {
+				display: table-row;
 			}
 
 			.status {
@@ -325,16 +411,72 @@
 				color: #212121;
 				border-top: 1px solid #90a4ae;
 			}
+
 			.status div {
 				margin-right: 15px;
 				display: inline-block;
 				vertical-align: middle;
 			}
+
 			.status div:last-child {
 				margin-right: 0px;
 			}
+
 			.status span {
 				color: #9e9e9e;
+			}
+
+
+			.code {
+				margin: 0;
+				padding: 6px 8px;
+				position: relative;
+				background-color: #fff;
+			}
+
+			.code__table {
+				margin: 0;
+				padding: 0;
+				position: relative;
+				display: table;
+				width: 100%;
+			}
+
+			.code__line {
+				margin: 0;
+				padding: 0;
+				position: relative;
+				display: table-row;
+			}
+
+			.code__line_n,
+			.code__line_text {
+				margin: 0;
+				padding: 0;
+				position: relative;
+				display: table-cell;
+			}
+
+			.code__line:hover {
+				background-color: rgba(237, 249, 255, 1);
+			}
+
+			.code__line_n {
+				color: rgba(170, 170, 170, 1);
+			}
+
+			.code__line_error,
+			.code__line_error:hover {
+				background-color: rgba(255, 0, 0, .1);
+			}
+
+			pre {
+				margin: 0;
+			}
+
+			pre b {
+				font-weight: bold;
+				text-decoration: underline;
 			}
 		</style>
 	</head>
@@ -357,44 +499,74 @@
 						<i class="exception__icon material-icons">warning</i>
 						<h1 class="exception__title" title="Источник ошибки (ошибочное имя файла, метода, …)">${self.exception.source}</h1>
 						^if(def $self.exception.type){
-							<h2 class="exception__type" title="Тип ошибки"><span class="arrow">&#8627^;</span>${self.exception.type}</h2>
+						<h2 class="exception__type" title="Тип ошибки"><span class="arrow">&#8627^;</span>${self.exception.type}</h2>
 						}
 						<div class="exception__comment" title="Комментарий">${self.exception.comment}</div>
 						^if(def $self.exception.file){
-							<div class="exception__file">at <span class="path" title="${self.exception.file}">${self.exception.file_path}/</span><span class="name">${self.exception.file_name}</span> line <span title="line:column">${self.exception.lineno}:${self.exception.colno}</span></div>
+						<div class="exception__file">at <span class="path" title="${self.exception.file}">${self.exception.file_path}</span><span class="name">${self.exception.file_name}</span> line <span title="line:column">${self.exception.lineno}:${self.exception.colno}</span></div>
 						}
 					</div>
-
 					^if($self.stack){
-						<div class="stack">
-							<div class="stack__title"><i class="stack__icon material-icons">filter_list</i><span>Stack Trace</span></div>
-							<div class="stack__content">
-								<table class="stack__trace">
-									<thead>
-										<tr>
-											<th class="stack__trace_n">#</th>
-											<th class="stack__trace_name">Called code</th>
-											<th class="stack__trace_path">Path</th>
-											<th class="stack__trace_file">File</th>
-											<th class="stack__trace_line">Line</th>
-											<th class="stack__trace_column">Column</th>
+					<div class="stack">
+						<div class="stack__title"><i class="stack__icon material-icons">filter_list</i><span>Stack Trace</span></div>
+						<div class="stack__content">
+							<table class="stack__trace">
+								<thead>
+									<tr>
+										<th class="stack__trace_n">#</th>
+										<th class="stack__trace_name">Called code</th>
+										<th class="stack__trace_path">Path</th>
+										<th class="stack__trace_file">File</th>
+										<th class="stack__trace_line">Line</th>
+										<th class="stack__trace_column">Column</th>
+									</tr>
+								</thead>
+								<tbody>
+									^self.stack.menu{
+										$mode[^if(^self.stack.offset[] % 2 == 0){odd}{even}]
+
+										<tr class="stack__line stack__line_info stack__line_${mode}">
+											<td class="stack__trace_n">${self.stack.ln}</td>
+											<td class="stack__trace_name">
+												<span>${self.stack.name}</span>
+											</td>
+											<td class="stack__trace_path" title="${self.stack.file}">${self.stack.file_path}</td>
+											<td class="stack__trace_file" title="${self.stack.file}">${self.stack.file_name}</td>
+											<td class="stack__trace_line">${self.stack.lineno}</td>
+											<td class="stack__trace_column">${self.stack.colno}</td>
 										</tr>
-									</thead>
-									<tbody>
-										^self.stack.menu{
-											<tr>
-												<td class="stack__trace_n">${self.stack.ln}</td>
-												<td class="stack__trace_name">${self.stack.name}</td>
-												<td class="stack__trace_path" title="${self.stack.file}">${self.stack.file_path}</td>
-												<td class="stack__trace_file" title="${self.stack.file}">${self.stack.file_name}</td>
-												<td class="stack__trace_line">${self.stack.lineno}</td>
-												<td class="stack__trace_column">${self.stack.colno}</td>
+
+										^if(def $self.files.[$self.stack.id]){
+											$file[$self.files.[$self.stack.id]]
+
+											$after($self.stack.lineno + $self.lines.half)
+											$before($self.stack.lineno - $self.lines.half)
+
+											<tr class="stack__line stack__line_code stack__line_${mode}">
+												<td class="stack__trace_n"></td>
+												<td class="stack__trace_code" colspan="5">
+													<div class="code">
+														<div class="code__table">
+															^file.data.menu{
+																^if(^file.data.line[] >= $before && ^file.data.line[] <= $after){
+																	^self._printCodeLine[
+																		$.line(^file.data.line[])
+																		$.text[$file.data.piece]
+																		$.errorLine($self.stack.lineno)
+																		$.errorCode[$self.stack.name]
+																	]
+																}
+															}
+														</div>
+													</div>
+												</td>
 											</tr>
 										}
-									</tbody>
-								</table>
-							</div>
+									}
+								</tbody>
+							</table>
 						</div>
+					</div>
 					}
 				</div>
 			</div>
@@ -407,5 +579,26 @@
 				</div>
 			</div>
 		</div>
+		<script>
+			window.onload = function() {
+				var lines = document.querySelectorAll('.stack__line_info');
+
+				for (var i = 0, imax = lines.length; i < imax; ++i) {
+					lines[i].addEventListener('click', function(e) {
+						var next = this.nextSibling;
+
+						while(next && next.nodeType != 1) {
+							next = next.nextSibling
+						}
+
+						this.classList.toggle('opened');
+
+						if (next) {
+							next.classList.toggle('opened');
+						}
+					});
+				}
+			};
+		</script>
 	</body>
 </html>

@@ -15,3 +15,6 @@ trim_trailing_whitespace = false
 
 [*.{p,bp,pp}]
 indent_style = tab
+
+[*.html]
+indent_style = tab
