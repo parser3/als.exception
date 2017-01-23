@@ -136,6 +136,13 @@ $self.debug(^params.debug.bool(false))
 		$_path[^self.normalizePath[$self.exception.file]]
 
 		$self.exception.file_path[^file:dirname[$_path]]
+
+		^if(!def $self.exception.file_path || $self.exception.file_path eq ""){
+			$self.exception.file_path[/]
+		}{
+			$self.exception.file_path[${self.exception.file_path}/]
+		}
+
 		$self.exception.file_name[^file:basename[$_path]]
 	}
 }
