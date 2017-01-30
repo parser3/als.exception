@@ -104,7 +104,11 @@ $self._system[^hash::create[
 @render[params][locals]
 $params[^hash::create[$params]]
 
-$self.debug(^params.debug.bool(false))
+^if($params.debug is bool){
+	$self.debug(^params.debug.bool(false))
+}($params.debug is junction){
+	$self.debug(^params.debug[])
+}
 
 ^if(def $params.lines){
 	$self.lines.count(^params.lines.int(0))
@@ -147,7 +151,7 @@ $self.debug(^params.debug.bool(false))
 	}
 }
 
-^if(def $params.stack && $params.stack is table){
+^if($self.debug && def $params.stack && $params.stack is table){
 	$_ln(^params.stack.count[])
 
 	^params.stack.menu{
@@ -297,14 +301,13 @@ $self.request.cookiesCount(^cookie:fields._count[])
 @_loadFile[path][locals]
 $result[^hash::create[
 	$.path[$path]
-	$.text[]
 	$.data[]
 ]]
 
 $file[^file::load[text;$path]]
+$text[^taint[html][$file.text]]
 
-$result.text[^taint[html][$file.text]]
-$result.data[^result.text.split[^#0A][v]]
+$result.data[^text.split[^#0A][v]]
 #end @_loadFile[]
 
 
