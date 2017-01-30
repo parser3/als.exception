@@ -38,14 +38,14 @@ $result[^Als/Exception:render[
 ## "Release" режим
 | Было | Стало |
 | :---------: | :---------------: |
-| [![Стандартный вывод: Release](doc/img/default-release.jpg)](doc/img/default-release.jpg) | [![Шаблонизированный вывод: Release](doc/img/templated-release.jpg)](doc/img/templated-release.jpg) |
+| [![Стандартный вывод: Release](doc/img/default.release.jpg)](doc/img/default.release.jpg) | [![Шаблонизированный вывод: Release](doc/img/templated.release.jpg)](doc/img/templated.release.jpg) |
 
 ---
 
 ## "Debug" режим
 | Было | Стало |
 | :---------: | :---------------: |
-| [![Стандартный вывод: Debug](doc/img/default-debug.jpg)](doc/img/default-debug.jpg) | [![Шаблонизированный вывод: Debug](doc/img/templated-debug.jpg)](doc/img/templated-debug.jpg) |
+| [![Стандартный вывод: Debug](doc/img/default.debug.jpg)](doc/img/default.debug.jpg) | [![Шаблонизированный вывод: Debug](doc/img/templated.debug.jpg)](doc/img/templated.debug.jpg) |
 
 ---
 
