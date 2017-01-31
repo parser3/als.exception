@@ -21,7 +21,7 @@ $result[^Als/Exception:render[
 	$.debug(true)
 	$.exception[$exception]
 	$.stack[$stack]
-	$.lines(21)
+	$.lines(20)
 ]]
 # End: @unhandled_exception[]
 ```
