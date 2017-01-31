@@ -304,10 +304,14 @@ $result[^hash::create[
 	$.data[]
 ]]
 
-$file[^file::load[text;$path]]
-$text[^taint[html][$file.text]]
+^try{
+	$file[^file::load[text;$path]]
+	$text[^taint[html][$file.text]]
 
-$result.data[^text.split[^#0A][v]]
+	$result.data[^text.split[^#0A][v]]
+}{
+	$exception.handled(true)
+}
 #end @_loadFile[]
 
 
