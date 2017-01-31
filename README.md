@@ -18,9 +18,9 @@ $ composer require als/exception
 ###############################################################################
 @unhandled_exception[exception;stack]
 $result[^Als/Exception:render[
-	$.debug(true)
 	$.exception[$exception]
 	$.stack[$stack]
+	$.debug(true)
 	$.lines(20)
 ]]
 # End: @unhandled_exception[]
@@ -28,10 +28,10 @@ $result[^Als/Exception:render[
 
 ### Params
 
-* $.debug `<bool|method>` Ссылка на метод @is_developer[], либо результат его выполнения
 * $.exception `<hash>` Информация об ошибке
 * $.stack `<table>` Стек вызовов
-* $.lines `<int>` Кол-во строк кода, которые будут показаны для каждой строки в стеке вызовов
+* $.debug `<bool|method>` Ссылка на метод @is_developer[], либо результат его выполнения. (default: false)
+* $.lines `<int>` Кол-во строк кода, которые будут показаны для каждой строки в стеке вызовов. (default: 20)
 
 
 
