@@ -550,15 +550,17 @@
 												<td class="stack__trace_code" colspan="5">
 													<div class="code">
 														<div class="code__table">
-															^file.data.menu{
-																^if(^file.data.line[] >= $before && ^file.data.line[] <= $after){
-																	^self._printCodeLine[
-																		$.line(^file.data.line[])
-																		$.text[$file.data.piece]
-																		$.errorLine($self.stack.lineno)
-																		$.errorCode[$self.stack.name]
-																	]
-																}
+															^if($file.data){
+  															^file.data.menu{
+  																^if(^file.data.line[] >= $before && ^file.data.line[] <= $after){
+  																	^self._printCodeLine[
+  																		$.line(^file.data.line[])
+  																		$.text[$file.data.piece]
+  																		$.errorLine($self.stack.lineno)
+  																		$.errorCode[$self.stack.name]
+  																	]
+  																}
+  															}
 															}
 														</div>
 													</div>
