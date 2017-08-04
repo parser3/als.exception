@@ -305,10 +305,11 @@ $result[^hash::create[
 ]]
 
 ^try{
-	$file[^file::load[text;$path]]
-	$text[^taint[html][$file.text]]
-
-	$result.data[^text.split[^#0A][v]]
+	^if(-f $path){
+		$file[^file::load[text;$path]]
+		$text[^taint[html][$file.text]]
+		$result.data[^text.split[^#0A][v]]
+	}
 }{
 	$exception.handled(true)
 }
