@@ -110,12 +110,10 @@ $params[^hash::create[$params]]
 	$self.debug(^params.debug[])
 }
 
-^if(def $params.lines){
-	$self.lines.count(^params.lines.int(0))
+$self.lines.count(^params.lines.int(20))
 
-	^if($self.lines.count > 1){
-		$self.lines.half(^math:floor($self.lines.count / 2))
-	}
+^if($self.lines.count > 1){
+	$self.lines.half(^math:floor($self.lines.count / 2))
 }
 
 ^if(def $params.exception && $params.exception is hash){
