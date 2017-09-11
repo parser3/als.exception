@@ -144,6 +144,7 @@ $params[^hash::create[$params]]
 		^if(!def $self.exception.file_path || $self.exception.file_path eq ""){
 			$self.exception.file_path[/]
 		}{
+		    $self.exception.file_path[^self.exception.file_path.trim[right;/]]
 			$self.exception.file_path[${self.exception.file_path}/]
 		}
 
